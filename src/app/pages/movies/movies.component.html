@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="col-md-6 mx-auto mt-4">
+        <div class="input-group ">
+            <input type="search" (input)="searchMovie(currentPage)" [(ngModel)]="query"  class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button (click)="searchMovie()" (change)="searchMovie()" type="button" class="btn btn-outline-primary">search</button>
+        </div>
+    </div>
+
+<div class="container">
+<div class="row mt-4">
+    <div class="col-md-3 col-lg-2 col-xl-2 col-sm-6" *ngFor="let populat of movie">
+        <app-card [item]="populat"></app-card>
+    </div>
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <p-paginator (onPageChange)="paginate($event)"  [rows]="20" [totalRecords]="totalpage"   ></p-paginator>
+    </div>
+</div>
+</div>
+
+

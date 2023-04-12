@@ -1,0 +1,16 @@
+
+<app-slider [items]="upComingMovies" ></app-slider>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="my-5 text-center">Popular Movie</h3>
+    </div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+    <div class="col-md-3 col-lg-2 col-xl-2 col-sm-6"  *ngFor="let populat of popularMovies">
+        <app-card [item]="populat"></app-card>
+    </div>
+</div>
+</div>

@@ -1,0 +1,38 @@
+.container-card-new {
+    /* border: 2px solid rgb(255, 255, 255); */
+    border-radius: 5px;
+    /* box-shadow: 1px 1px 16px; */
+    box-shadow: 10px 11px 10px -4px rgba(156,152,152,1);
+-webkit-box-shadow: 10px 11px 10px -4px rgba(156,152,152,1);
+-moz-box-shadow: 10px 11px 10px -4px rgba(156,152,152,1);
+}
+.mrd{
+    padding: 1px;
+    display: inline-block;
+    width: 900px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis; 
+}
+@media screen and (max-width: 992px) {
+    .mrd {
+        display: inline-block;
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+    }
+  }
+ 
+.animte{
+    animation: animate__pulse;
+    animation-duration: 2s;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headerEpisode{
+    background-color: rgba(199.5, 220.5, 220.5, 1);
+}

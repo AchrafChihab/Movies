@@ -1,0 +1,19 @@
+    <div class="card my-2" >
+        <a [routerLink]="['/showmovie',item.id]">
+        <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w300'+item.poster_path" [alt]="item.original_title">
+        </a>
+        <div class="card-body">
+            <h6 class="card-title">{{item.original_title}}</h6>
+        </div>
+        <div class="d-flex justify-content-start">
+            <h6 *ngIf="item.release_date" style="font-size:small;" class="card-text mx-3">{{item.release_date | date:'yyyy' }}</h6>
+            <h6 *ngIf="!item.release_date" style="font-size:small;" class="card-text ">Unknown</h6>
+            <strong class="dot me-4">●</strong>
+            <h6 style="font-size:small;" class="card-text ">{{itemMrunTime}}<span style="font-size:small;"> m</span></h6>
+        </div>
+    </div>
+
+
+
+
+  

@@ -1,0 +1,16 @@
+/* body{
+    padding: 2rem 0rem;
+  } */
+  .card-img-overlay {
+    background-color: rgba(#000, 0.4);
+  }
+  .card-title{
+    margin-bottom: 0px;
+    font-size: small;
+    text-align: center;
+  }
+  .card-title:hover {
+    color: slateblue;
+    
+  }
+  

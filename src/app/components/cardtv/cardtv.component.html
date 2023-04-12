@@ -1,0 +1,12 @@
+<div class="card my-2" >
+    <a [routerLink]="['/tvshow',itemtv.id]">
+    <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w300'+itemtv.poster_path" [alt]="itemtv.original_name">
+    </a>
+    <div class="card-body">
+        <h6 class="card-title">{{itemtv.original_name}}</h6>
+    </div>
+    <div class="d-flex justify-content-start">
+        <h6 *ngIf="itemtv.first_air_date" style="font-size:small;" class="card-text mx-3">{{itemtv.first_air_date | date:'yyyy' }}</h6>
+        <h6 *ngIf="!itemtv.first_air_date" style="font-size:small;" class="card-text ">Unknown</h6>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<app-slider [items]="toRatedTvShow"></app-slider>
+<div class="container">
+    <div class="row mt-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="textForPopular">What's Popular</h5>
+            <!-- <div class="col-md-6">
+                <div class="input-group ">
+                    <input type="search" (input)="searchTv(currentPage)" [(ngModel)]="querytv"  class="form-control rounded sizing" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                    <button  type="button" (click)="searchTv()" class="btn btn-outline-primary">search</button>
+                </div>
+            </div>           -->
+        </div>
+        
+        <div class="col-md-3 col-lg-2 col-xl-2 col-sm-6" *ngFor="let popular of toRatedTvShow">
+            <app-cardtv [itemtv]="popular"></app-cardtv>
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <p-paginator (onPageChange)="paginate($event)"  [rows]="20" [totalRecords]="totalpage"   ></p-paginator>
+        </div>
+    </div>
+</div>

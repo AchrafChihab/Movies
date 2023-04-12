@@ -1,0 +1,7 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 my-2" *ngFor="let vedio of Trailermovie">
+            <app-youtube-embed [key]="vedio.key" [tittle]="vedio.name"></app-youtube-embed>
+        </div>
+    </div>
+</div>

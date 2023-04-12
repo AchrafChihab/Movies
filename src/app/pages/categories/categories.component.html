@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-6 mx-auto">
+            <div class="form-group mt-3">
+                <label class="form-label" for="category">Genres<span style="color: rgb(255, 0, 0);">*</span></label>
+                <select (change)="displayMovie()" [(ngModel)]="categoryName" class="form-select" id="category"
+                    aria-label="Default select example">
+                    <option selected>Select Category</option>
+                    <option  *ngFor="let genre of tvGenre" [ngValue]="genre.id">{{genre.name}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-3 col-lg-2 col-xl-2 col-sm-6" *ngFor="let populat of popularM">
+            <app-card [item]="populat"></app-card>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <p-paginator (onPageChange)="onPageChange($event)"  [rows]="20" [totalRecords]="totalpage"   ></p-paginator>
+        </div>
+    </div>
+</div>

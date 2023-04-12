@@ -1,0 +1,60 @@
+<!-- <div class="container mt-4">
+  <div class="row">
+    <div class="col-md-2 my-2" *ngFor="let img of movieImages ;first  as f">
+      <div class="card" style="width: 9rem;">
+        <img [src]="'https://image.tmdb.org/t/p/w300'+img.file_path" class="card-img-top" alt="">
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <p-galleria [(value)]="movieImages"  (onValueChange)="onImageChange($event)" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px' }" [numVisible]="5">
+  <ng-template pTemplate="item" let-img>
+    <img [src]="'https://image.tmdb.org/t/p/w300'+img.file_path" style="width: 100%;" />
+  </ng-template>
+  <ng-template pTemplate="thumbnail" let-img>
+    <div class="grid grid-nogutter justify-content-center">
+      <img [src]="'https://image.tmdb.org/t/p/w300'+img.file_path" />
+    </div>
+  </ng-template>
+</p-galleria> -->
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p-galleria [value]="movieImages" 
+  [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '100%' }" [numVisible]="5">
+  <ng-template pTemplate="item" let-img>
+    <img [src]="img.item"  />
+  </ng-template>
+  <ng-template pTemplate="thumbnail" let-img>
+    <div class="grid grid-nogutter justify-content-center">
+      <img [src]="img.thumbnail" />
+    </div>
+  </ng-template>
+</p-galleria>
+    </div>
+  </div>
+</div> -->
+
+<!-- <p-galleria [value]="movieImages" [showIndicators]="true" [showThumbnails]="false" [changeItemOnIndicatorHover]="true" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px' }"> 
+  <ng-template pTemplate="item" let-img>
+      <img [src]="img.item" style="width: 100%; display: block;" />
+  </ng-template>
+</p-galleria> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto my-2">
+      <p-galleria [value]="movieImages" [numVisible]="5" [circular]="true" [showItemNavigators]="true" [showThumbnails]="false" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '500px'}">
+        <ng-template pTemplate="item" let-img>
+            <img [src]="img.item" style="width: 500px; height: 800px; display: block; border-radius: 30px;" />
+        </ng-template>
+      </p-galleria>
+    </div>
+  </div>
+</div>
+
+
+
+

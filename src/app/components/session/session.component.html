@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-6 my-2" *ngFor="let season of session;  let i = index">
+            <ul class="list-group list-group-light" >
+                <li class="container-card-new d-flex justify-content-between align-items-center">
+                    <a (click)="sidebarVisible=true" (click)="getEpisodes(i)"><div class="d-flex align-items-center">
+                      <img [src]="'https://image.tmdb.org/t/p/original'+season.poster_path" class="rounded float-start" alt="" style="width: 130px; height: 195x" />
+                    <div class="ms-2">
+                      <h6 class="fw-bold mb-1">{{season.name}}</h6>
+                      <p class="text-muted mb-0">{{season.air_date | date:'yyyy'}} | Episodes <span>{{season.episode_count}}</span></p>
+                      <p class="text-muted dotstext mb-0">{{season.overview}}</p>
+                    </div>
+                  </div></a>
+                </li>
+              </ul>
+        </div>
+    </div> 
+    <p-sidebar [(visible)]="sidebarVisible" [fullScreen]="true">
+      <div class="container">
+      <div class="row">
+       <div class="col-md-12 my-1">
+      <app-session-episode [episodes]="episodes"></app-session-episode>
+      </div> 
+    </div>
+  </div>
+    </p-sidebar>    
+</div>
+<router-outlet></router-outlet>

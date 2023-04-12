@@ -1,0 +1,13 @@
+.container-card-new {
+    /* border: 2px solid rgb(255, 255, 255); */
+    border-radius: 10px;
+    box-shadow: 1px 1px 17px;
+}
+.dotstext{
+    
+        display: inline-block;
+        width: 240px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis; 
+}

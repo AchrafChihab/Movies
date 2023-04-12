@@ -1,0 +1,43 @@
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-md-2 mt-3 col-lg-2 col-sm-6" *ngFor="let actor of moviesActors.slice(0, 6)">
+        <!-- card HTML -->
+        <div class="card">
+            <img *ngIf="!actor.profile_path" style="height: 247px;width: 165px;" class="card-img-top imgA" src="../../../assets/img/man.jpg" alt={{actor.name}}>
+            <img *ngIf="actor.profile_path" class="card-img-top imgA" [src]="'https://image.tmdb.org/t/p/w300'+actor.profile_path" alt={{actor.name}}>
+            <!-- <div class="card-body">
+                    <h6 class="card-title">{{actor.name}}</h6>
+                    <div>
+                        <h6 class="card-title">{{actor.character}}</h6>                         
+                    </div>
+            </div> -->
+            <div class="card-img-overlay text-white d-flex flex-column justify-content-end">
+              <p class="card-title">{{actor.name}}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="showMore">
+      <div class="col-md-2 mt-3 col-lg-2 col-sm-6" *ngFor="let actor of moviesActors.slice(4)">
+        <!-- card HTML -->
+        <div class="card">
+            <img *ngIf="!actor.profile_path" class="card-img-top imgA" src="../../../assets/img/man.jpg" alt={{actor.name}}>
+            <img *ngIf="actor.profile_path" class="card-img-top imgA" [src]="'https://image.tmdb.org/t/p/w300'+actor.profile_path" alt={{actor.name}}>
+            <!-- <div class="card-body">
+                <h6 class="card-title">{{actor.name}}</h6>                           
+            </div> -->
+            <div class="card-img-overlay text-white d-flex flex-column justify-content-end">
+              <p class="card-title">{{actor.name}}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-grid gap-2 mt-2">
+        <!-- <button class="btn btn-primary" (click)="showMore = !showMore">
+          {{ showMore ? 'Show Less' : 'Show More' }}
+        </button> -->
+        <a style="text-align:center" (click)="showMore = true" *ngIf="!showMore"><i class="fa fa-chevron-circle-down fa-2x" aria-hidden="true"></i></a>
+        <a style="text-align:center" (click)="showMore = false" *ngIf="showMore"><i  class="fa fa-chevron-circle-up fa-2x" aria-hidden="true"></i></a>
+      </div>
+  </div>
+  

@@ -1,0 +1,78 @@
+ 
+ <app-slider [items]="[itemM]"></app-slider>
+
+<!--Sart-->
+       <div class="container mt-4">
+      <div class="row movie-details">
+         <div class="col-md-4">
+          <img src="https://image.tmdb.org/t/p/w300{{itemM.poster_path}}" alt="{{itemM.title}} poster" class="img-fluid rounded">
+        </div> 
+      <div class="col-md-8">
+        <h1 class="movie-title">{{itemM.title}}</h1>
+    
+        <ul class="list-inline movie-genres">
+          <li *ngFor="let genre of itemM.genres" class="list-inline-item">{{genre.name}}</li>
+        </ul>
+    
+        <p class="movie-overview">{{itemM.overview}}</p>
+    
+        <dl class="row movie-details-list">
+          <dt class="col-sm-4">Release Date:</dt>
+          <dd class="col-sm-8">{{itemM.release_date | date:'mediumDate'}}</dd>
+    
+          <dt class="col-sm-4">Runtime:</dt>
+          <dd class="col-sm-8">{{itemM.runtime}} minutes</dd>   
+          <dt class="col-sm-4">Revenue:</dt>
+          <dd class="col-sm-8">{{itemM.revenue | currency:'USD':'symbol':'1.0-0'}}</dd>
+    
+          <dt class="col-sm-4">Vote Average:</dt>
+          <dd class="col-sm-8">{{itemM.vote_average}}</dd>
+    
+          <dt class="col-sm-4">Vote Count:</dt>
+          <dd class="col-sm-8">{{itemM.vote_count}}</dd>
+        </dl>
+      </div>
+    </div>
+  </div>  
+      <!-- end -->
+
+
+      <!-- <div class="card">
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/w300{{itemM.poster_path}}" alt="{{ itemM.title }} poster">
+        <div class="card-body">
+          <h5 class="card-title">{{ itemM.title }}</h5>
+          <p class="card-text">{{ itemM.overview }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <div *ngFor="let genre of itemM">
+            <li class="list-group-item"><strong>Genres:</strong> {{ getGenres(genre.genres) }}</li>
+          </div>
+          <li class="list-group-item"><strong>Release Date:</strong> {{ itemM.release_date }}</li>
+          <li class="list-group-item"><strong>Runtime:</strong> {{ itemM.runtime }} minutes</li>
+           <li class="list-group-item"><strong>Production Companies:</strong> {{ itemM.production_companies.map(company => company.name).join(", ") }}</li>
+          <li class="list-group-item"><strong>Revenue:</strong> {{ itemM.revenue | currency:'USD':'symbol' }}</li> 
+        </ul>
+        <div class="card-footer">
+          <small class="text-muted"><strong>IMDb Rating:</strong> {{ itemM.vote_average }}/10 ({{ itemM.vote_count }} votes)</small>
+        </div>
+      </div> -->
+      
+
+      
+
+<div class="container mt-4">
+  <ul class="nav nav-tabs justify-content-center "  role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link " [routerLink]="['similar']" routerLinkActive="active" data-bs-toggle="tab"  aria-selected="false" tabindex="-1" role="tab">Similar</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" routerLink="author" routerLinkActive="active" data-bs-toggle="tab" aria-selected="false" tabindex="-1" role="tab">Author</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" routerLink="image" routerLinkActive="active" data-bs-toggle="tab"  aria-selected="false" tabindex="-1" role="tab">Images</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" routerLink="trailer" routerLinkActive="active" data-bs-toggle="tab"  aria-selected="false" tabindex="-1" role="tab">Trailer</a>
+    </li>
+  </ul>
+<router-outlet></router-outlet>
